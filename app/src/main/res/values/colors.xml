@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="background_color">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FF290E</color>
@@ -8,4 +9,11 @@
     <color name="error">#F44336</color>
     <color name="floating">#D8D9DA</color>
     <color name="dark_grey">#E4E0E1</color>
+    <color name="light_green">#3DC7BC</color>
+    <color name="light_yellow">#FB9C48</color>
+    <color name="light_red">#ED4F4F</color>
+    <color name="light_blue">#419EEF</color>
+    <color name="light_orange">#F2EDED</color>
+    <color name="darkgrey">#37383A</color>
+
 </resources>

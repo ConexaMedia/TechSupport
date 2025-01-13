@@ -9,7 +9,7 @@
     android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="86dp"
         android:background="@color/bluedark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -36,7 +36,9 @@
         android:background="@drawable/tab_background"
         app:tabIndicatorFullWidth="true"
         app:tabIndicatorGravity="stretch"
-        app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorColor="@color/orange"
+        app:tabTextColor="@color/bluedark"
+        app:tabSelectedTextColor="@color/bluedark"
         app:tabIndicatorAnimationMode="elastic"
         app:tabIndicator="@drawable/tab_indicator"
         android:elevation="10dp">

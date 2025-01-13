@@ -36,6 +36,8 @@ public class login extends AppCompatActivity {
                 String pass = password.getText().toString();
                 if(validasi(user,pass)){
                     Intent intent = new Intent(login.this, MainActivity.class);
+                    intent.putExtra(panelHome.NamaTeknisi, user);
+                    intent.putExtra(panelProfile.NamaTeknisi, user);
                     startActivity(intent);
                     finish();
                 } else {

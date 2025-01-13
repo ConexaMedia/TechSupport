@@ -5,6 +5,6 @@
         android:color = "@color/bluedark"/>
     <item
         android:state_selected="false"
-        android:color = "@color/darkgrey"/>
+        android:color = "@color/nonselected"/>
 
 </selector>

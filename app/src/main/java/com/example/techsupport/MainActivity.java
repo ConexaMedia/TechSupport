@@ -23,23 +23,26 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        bottomNavigationView = findViewById(R.id.nav_bottom);
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content_panel, panelHome.newInstance("Tech Support")).commit();
+        String username = getIntent().getStringExtra(panelHome.NamaTeknisi);
 
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content_panel, panelHome.newInstance(username)).commit();
+
+        bottomNavigationView = findViewById(R.id.nav_bottom);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 Fragment setFragment = null;
 
                 if(item.getItemId() == R.id.nav_home){
-                    setFragment = new panelHome();
+                    setFragment = panelHome.newInstance(username);
                 } else if (item.getItemId() == R.id.nav_task) {
                     setFragment = new panelTask();
                 } else if (item.getItemId() == R.id.nav_history) {
                     setFragment = new panel_history();
                 } else if (item.getItemId() == R.id.nav_profile) {
-                    setFragment = new panelProfile();
+                    setFragment = panelProfile.newInstance(username);
                 }
 
                 if (setFragment != null) {

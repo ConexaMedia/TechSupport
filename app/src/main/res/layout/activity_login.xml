@@ -45,19 +45,19 @@
                     app:boxStrokeErrorColor="@color/bluedark"
                     app:startIconDrawable="@drawable/user"
                     app:startIconTint="@color/bluedark"
-                    android:hint="Username"
+                    android:hint="Email"
                     app:endIconMode="clear_text"
                     app:endIconTint="@color/bluedark"
                     style="@style/CustomTextInputLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:drawableStart="@drawable/user"
-                        android:id="@+id/inputUsername"
                         android:inputType="text"
                         android:textColor="@color/bluedark"
-                        android:textColorHint="@color/bluedark"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:textColorHint="@color/bluedark" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout

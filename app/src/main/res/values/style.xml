@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/values/styles.xml -->
+<resources>
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/bluedark</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="hintTextColor">@color/bluedark</item>
+        <item name="helperTextTextColor">@color/bluedark</item>
+        <item name="android:textColorHint">@color/bluedark</item>
+    </style>
+
+    <style name="btn_orange" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/orange</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

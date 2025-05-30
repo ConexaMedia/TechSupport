@@ -18,6 +18,7 @@ public class login extends AppCompatActivity {
     private EditText username;
     private EditText password;
     private Button btn_login;
+    private Button btn_registrasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class login extends AppCompatActivity {
         username = findViewById(R.id.inputUsername);
         password = findViewById(R.id.inputPassword);
         btn_login = findViewById(R.id.btn_login);
+        btn_registrasi = findViewById(R.id.btn_registrasi);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,9 +47,16 @@ public class login extends AppCompatActivity {
                 }
             }
         });
+        btn_registrasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toRegist = new Intent(login.this, RegistrasiTeknisi.class);
+                startActivity(toRegist);
+            }
+        });
     }
     private boolean validasi(String user, String password){
-        return user.equals("Admin Conexa")&& password.equals("conexamedia");
+        return user.equals("PABPROJECT")&& password.equals("123456");
     }
 
 }

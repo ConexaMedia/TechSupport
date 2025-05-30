@@ -14,23 +14,20 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/nav_bottom"/>
 
-   <com.google.android.material.bottomnavigation.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="18dp"
-       android:layout_marginStart="24dp"
-       android:layout_marginEnd="24dp"
-       android:layout_marginBottom="24dp"
         android:elevation="12dp"
-        app:itemIconSize="24dp"
+        android:paddingVertical="6dp"
+        android:layout_margin="30dp"
         android:background="@drawable/nav_background"
-        app:menu="@menu/nav_bottom"
+        app:itemIconSize="24dp"
         app:itemIconTint="@drawable/item_selector"
         app:itemRippleColor="@color/white"
-        app:labelVisibilityMode="unlabeled">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:itemTextColor="@drawable/item_selector"
+        app:labelVisibilityMode="selected"
+        app:menu="@menu/nav_bottom" />
 
 </RelativeLayout>

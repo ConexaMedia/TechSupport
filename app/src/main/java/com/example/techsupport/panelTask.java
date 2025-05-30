@@ -24,7 +24,6 @@ public class panelTask extends Fragment {
     public panelTask(){
 
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -38,8 +37,8 @@ public class panelTask extends Fragment {
         adapter = new FragmentAdapter(fragmentManager, getLifecycle());
         viewPager.setAdapter(adapter);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Aktivasi"));
         tabLayout.addTab(tabLayout.newTab().setText("Maintenance"));
+        tabLayout.addTab(tabLayout.newTab().setText("Aktivasi"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

@@ -49,9 +49,5 @@
                 android:layout_marginStart="60dp"
                 android:background="@drawable/tech_splash"/>
         </LinearLayout>
-
-
-
     </FrameLayout>
-
 </RelativeLayout>

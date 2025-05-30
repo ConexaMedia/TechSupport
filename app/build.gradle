@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.techsupport'
+    namespace 'com.conexa.techsupport'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.techsupport"
+        applicationId "com.conexa.techsupport"
         minSdk 24
         targetSdk 34
         versionCode 1

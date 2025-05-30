@@ -1,4 +1,4 @@
-package com.example.techsupport;
+package com.conexa.techsupport;
 
 import android.os.Bundle;
 

@@ -39,6 +39,8 @@ public class AktivasiFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
+
         View view = inflater.inflate(R.layout.fragment_aktivasi, container, false);
 
         recyclerView = view.findViewById(R.id.recylerViewAktivasi);

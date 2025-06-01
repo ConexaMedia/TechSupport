@@ -1,5 +1,7 @@
 package com.conexa.techsupport.models;
 
+import java.util.Map;
+
 public class Task {
     private String id;
     private String namaPelanggan;
@@ -8,6 +10,7 @@ public class Task {
     private String status;
     private String tanggal;
     private String jenis;
+    private Map<String, Boolean> checklist;
 
     //field aktivasi
     private String paket;
@@ -87,6 +90,13 @@ public class Task {
     // Helper method untuk mengecek jenis task
     public boolean isAktivasi() {
         return "aktivasi".equals(jenis);
+    }
+
+    public Map<String, Boolean> getChecklist() {
+        return checklist;
+    }
+    public void setChecklist(Map<String, Boolean> checklist) {
+        this.checklist = checklist;
     }
 
 }

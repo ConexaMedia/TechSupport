@@ -3,6 +3,9 @@ package com.conexa.techsupport;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.conexa.techsupport.fragment.HistoryFragment;
+import com.conexa.techsupport.fragment.ProfilFragment;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -37,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.nav_task) {
                     setFragment = new panelTask();
                 } else if (item.getItemId() == R.id.nav_history) {
-                    setFragment = new panel_history();
+                    setFragment = new HistoryFragment();
                 } else if (item.getItemId() == R.id.nav_profile) {
-                    setFragment = panelProfile.newInstance(username);
+                    setFragment = new ProfilFragment();
                 }
 
                 if (setFragment != null) {

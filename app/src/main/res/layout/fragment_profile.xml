@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".panelProfile">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="@color/bluedark">
@@ -216,6 +216,7 @@
 
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_logout_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -259,6 +260,7 @@
 
                 </androidx.cardview.widget.CardView>
 
+
             </LinearLayout>
 
         </RelativeLayout>
@@ -268,7 +270,9 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="260dp">
+        android:layout_marginTop="260dp"
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="bottom|center">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

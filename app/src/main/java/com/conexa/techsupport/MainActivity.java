@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
                 if(item.getItemId() == R.id.nav_home){
                     setFragment = panelHome.newInstance(username);
                 } else if (item.getItemId() == R.id.nav_task) {
-                    setFragment = new panelTaskAktivasi();
+                    setFragment = new panelTask();
                 } else if (item.getItemId() == R.id.nav_history) {
-                    setFragment = new panelTaskMaintenance();
+                    setFragment = new panel_history();
                 } else if (item.getItemId() == R.id.nav_profile) {
                     setFragment = panelProfile.newInstance(username);
                 }

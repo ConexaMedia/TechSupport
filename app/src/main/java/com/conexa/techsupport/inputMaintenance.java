@@ -6,16 +6,16 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-public class panelTaskMaintenance extends Fragment{
+public class inputMaintenance extends Fragment{
 
-    public panelTaskMaintenance(){
+    public inputMaintenance(){
 
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
 
-        View view = inflater.inflate(R.layout.fragment_taskmaintenance, container,false);
+        View view = inflater.inflate(R.layout.fragment_detail_maintenance, container,false);
         return view;
     }
 }

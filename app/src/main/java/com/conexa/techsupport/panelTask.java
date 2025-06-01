@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.conexa.techsupport.adapters.FragmentAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class panelTask extends Fragment {
@@ -22,7 +23,7 @@ public class panelTask extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_panel_task, container, false);
+        View view = inflater.inflate(R.layout.activity_task, container, false);
 
 
         tabLayout = view.findViewById(R.id.tabLayout);

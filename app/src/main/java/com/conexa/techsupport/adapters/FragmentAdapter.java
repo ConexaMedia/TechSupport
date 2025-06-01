@@ -1,10 +1,13 @@
-package com.conexa.techsupport;
+package com.conexa.techsupport.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.conexa.techsupport.AktivasiFragment;
+import com.conexa.techsupport.MaintenanceFragment;
 
 public class FragmentAdapter extends FragmentStateAdapter {
     public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
@@ -15,9 +18,9 @@ public class FragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if (position == 1){
-            return new Aktivasi();
+            return new AktivasiFragment();
         }
-        return new Maintenance();
+        return new MaintenanceFragment();
     }
 
     @Override

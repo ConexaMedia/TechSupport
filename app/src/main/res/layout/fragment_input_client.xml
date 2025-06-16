@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:background="@color/bluedark">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Internet Baru"
+                    android:fontFamily="@font/coolvetica_reguler"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="42dp"/>
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardInetBaru"
+            android:layout_width="match_parent"
+            android:layout_height="540dp"
+            app:cardBackgroundColor="@color/floating"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginVertical="10dp"
+            app:cardCornerRadius="12dp"
+            android:elevation="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Nama -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/namaClient"
+                    style="@style/CustomTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:hint="Nama Pelanggan"
+                    app:hintTextColor="@color/bluedark"
+                    app:startIconDrawable="@drawable/user"
+                    app:startIconTint="@color/bluedark"
+                    app:boxStrokeColor="@color/bluedark"
+                    app:endIconMode="clear_text">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputNamaClient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/bluedark"
+                        android:textColorHint="@color/bluedark"
+                        android:drawableStart="@drawable/user"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Kontak -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/kontakClient"
+                    style="@style/CustomTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:hint="Kontak"
+                    app:hintTextColor="@color/bluedark"
+                    app:startIconDrawable="@drawable/contact"
+                    app:startIconTint="@color/bluedark"
+                    app:boxStrokeColor="@color/bluedark"
+                    app:endIconMode="clear_text">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputKontakClient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/bluedark"
+                        android:textColorHint="@color/bluedark"
+                        android:drawableStart="@drawable/contact"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Paket Internet -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/paketInet"
+                    style="@style/CustomTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="30dp"
+                    app:hintTextColor="@color/bluedark"
+                    app:startIconDrawable="@drawable/paketinet"
+                    app:startIconTint="@color/bluedark"
+                    app:boxStrokeColor="@color/bluedark"
+                    app:endIconMode="dropdown_menu"
+                    app:endIconTint="@color/bluedark">
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/inputPaketInet"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"
+                        android:hint="Paket Internet"
+                        android:textColor="@color/bluedark"
+                        android:textColorHint="@color/bluedark"
+                        android:drawableStart="@drawable/paketinet"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Alamat -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/CustomTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="30dp"
+                    app:boxStrokeColor="@color/bluedark"
+                    android:hint="Masukan Alamat Lengkap"
+                    app:hintTextColor="@color/bluedark"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/bluedark">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputAlamatClient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:lines="4"
+                        android:maxLines="6"
+                        android:minLines="4"
+                        android:textColor="@color/bluedark"
+                        android:textColorHint="@color/bluedark"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Tanggal Pemasangan -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/CustomTextInputLayout"
+                    android:id="@+id/layoutTanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:hint="Tanggal Pemasangan"
+                    app:hintTextColor="@color/bluedark"
+                    app:startIconDrawable="@drawable/calendar"
+                    app:startIconTint="@color/bluedark"
+                    app:boxStrokeColor="@color/bluedark"
+                    app:endIconMode="clear_text">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputJadwal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/bluedark"
+                        android:drawableStart="@drawable/calendar"
+                        android:focusableInTouchMode="false"
+                        android:focusable="false"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_submitClient"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/coolvetica_reguler"
+                    android:text="Submit Client"
+                    android:textSize="14sp"
+                    android:backgroundTint="@color/orange"
+                    app:cornerRadius="12dp"/>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

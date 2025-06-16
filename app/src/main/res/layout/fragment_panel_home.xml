@@ -47,30 +47,33 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp">
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="vertical">
                             <TextView
-                                android:id="@+id/nama_teknisi"
+                                android:id="@+id/show_nama_teknisi"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Nama Teknisi"
+                                android:text=""
                                 android:textColor="@color/white"
                                 android:fontFamily="@font/coolvetica_reguler"
                                 android:textSize="20sp"/>
 
                             <TextView
+                                android:id="@+id/show_noregist"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/poppins"
-                                android:text="CNT22013"
+                                android:text=""
                                 android:textColor="@color/white"
                                 android:textSize="16sp"/>
                         </LinearLayout>
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="100dp">
+                                android:layout_marginStart="140dp"
+                                android:layout_gravity="end">
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -127,6 +130,7 @@
                     android:orientation="horizontal">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_olt"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.5"

@@ -74,12 +74,22 @@ public class login extends AppCompatActivity {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             if (snapshot.exists()) {
+                                                for (DataSnapshot data : snapshot.getChildren()){
+                                                    String role = data.child("role").getValue(String.class);
+                                                    String noRegister = data.child("noRegister").getValue(String.class);
 
-                                                Intent intent = new Intent(login.this, MainActivity.class);
-                                                startActivity(intent);
-                                                finish();
+                                                    Intent intent;
+                                                    if (role != null && role.equals("Admin")){
+                                                        intent = new Intent(login.this, MainActivityAdmin.class);
+                                                    }else {
+                                                        intent = new Intent(login.this, MainActivity.class);
+                                                        intent.putExtra("NO_REGISTER", noRegister);
+                                                    }
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
                                             } else {
-                                                Toast.makeText(login.this, "Teknisi belum terdaftar", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(login.this, "User belum terdaftar", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                         @Override

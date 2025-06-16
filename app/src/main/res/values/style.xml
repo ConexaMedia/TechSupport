@@ -15,4 +15,18 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="CustomDatePicker" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="colorPrimary">@color/bluedark</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay_App_DatePicker" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <item name="materialCalendarStyle">@style/Widget.App.MaterialCalendar</item>
+    </style>
+
+    <style name="Widget.App.MaterialCalendar" parent="Widget.Material3.MaterialCalendar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:calendarTextColor">@color/bluedark</item>
+    </style>
+
 </resources>

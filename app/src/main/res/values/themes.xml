@@ -9,8 +9,8 @@
         <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">@color/white</item>
         <item name="android:windowActivityTransitions">true</item>
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-
+        <item name="colorAccent">@color/bluedark</item> <!-- Untuk Android < 10 -->
+        <item name="android:datePickerDialogTheme">@style/CustomDatePicker</item>
     </style>
 
     <style name="Theme.TechSupport" parent="Base.Theme.TechSupport" />

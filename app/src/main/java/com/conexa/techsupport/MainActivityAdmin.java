@@ -2,55 +2,51 @@ package com.conexa.techsupport;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-
-import com.conexa.techsupport.fragment.HistoryFragment;
+import com.conexa.techsupport.fragment.panelHomeAdmin;
 import com.conexa.techsupport.fragment.ProfilFragment;
+import com.conexa.techsupport.fragment.HistoryFragment;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import com.google.android.material.navigation.NavigationBarView;
-
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityAdmin extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth fAuth;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_admin);
 
-        mAuth = FirebaseAuth.getInstance();
+        fAuth = FirebaseAuth.getInstance();
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content_panel, new panelHome()).commit();
+                .replace(R.id.content_panel_admin,new panelHomeAdmin()).commit();
 
-        bottomNavigationView = findViewById(R.id.nav_bottom);
+        bottomNavigationView = findViewById(R.id.nav_bottom_admin);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment setFragment = null;
 
-                if(item.getItemId() == R.id.nav_home){
-                    setFragment = new panelHome();
-                } else if (item.getItemId() == R.id.nav_task) {
-                    setFragment = new panelTask();
-                } else if (item.getItemId() == R.id.nav_history) {
+                if (item.getItemId() == R.id.nav_home){
+                    setFragment = new panelHomeAdmin();
+                } else if (item.getItemId() == R.id.nav_data) {
                     setFragment = new HistoryFragment();
                 } else if (item.getItemId() == R.id.nav_profile) {
                     setFragment = new ProfilFragment();
                 }
-
-                if (setFragment != null) {
+                if (setFragment !=null ){
                     getSupportFragmentManager()
                             .beginTransaction()
                             .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                            .replace(R.id.content_panel, setFragment)
+                            .replace(R.id.content_panel_admin,setFragment)
                             .commit();
                     return true;
                 }

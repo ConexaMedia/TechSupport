@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.conexa.techsupport.login;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +28,8 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfilFragment extends Fragment {
     private TextView tvNamaTeknisi, tvNRK;
     private CardView btnLogout;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
 
 
@@ -34,39 +37,44 @@ public class ProfilFragment extends Fragment {
                              Bundle savedInstancState){
 
         View view = inflater.inflate(R.layout.fragment_profile, container,false);
-        tvNamaTeknisi = view.findViewById(R.id.nama_teknisi);
+        tvNamaTeknisi = view.findViewById(R.id.show_user);
         tvNRK = view.findViewById(R.id.NRK);
         btnLogout = view.findViewById(R.id.btn_logout_card);
 
-        loadUserData();
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference("teknisi");
 
+        loadUserData();
         btnLogout.setOnClickListener(v -> logoutUser());
         return view;
     }
 
     private void loadUserData(){
-        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DatabaseReference userRef = FirebaseDatabase.getInstance()
-                .getReference("teknisi")
-                .child(userId);
+        FirebaseUser  currentUser = mAuth.getCurrentUser();
+        if (currentUser != null){
+            String userUID = currentUser.getUid();
 
-        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    String nama = snapshot.child("nama").getValue(String.class);
-                    String nrk = snapshot.child("noRegister").getValue(String.class);
+            mDatabase.orderByChild("uid").equalTo(userUID).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()){
+                        for (DataSnapshot snapshotTech :snapshot.getChildren()){
+                            String nama = snapshotTech.child("nama").getValue(String.class);
+                            String noRegister = snapshotTech.child("noRegister").getValue(String.class);
 
-                    tvNamaTeknisi.setText(nama);
-                    tvNRK.setText(nrk);
+                            tvNamaTeknisi.setText(nama);
+                            tvNRK.setText(noRegister);
+                        }
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), "Gagal memuat data", Toast.LENGTH_SHORT).show();
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
     }
 
     private void logoutUser(){

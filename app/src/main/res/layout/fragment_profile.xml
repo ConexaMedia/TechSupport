@@ -37,12 +37,12 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/user_1"/>
                 <TextView
-                    android:id="@+id/nama_teknisi"
+                    android:id="@+id/show_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:textSize="20sp"
-                    android:text="Nama"
+                    android:text=""
                     android:textColor="@color/orange"
                     android:fontFamily="@font/coolvetica_reguler"/>
             </LinearLayout>
@@ -293,7 +293,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/cooperhewitt_bold"
-                    android:text="CNT22013"
+                    android:text=""
                     android:textColor="@color/orange"
                     android:textSize="32sp" />
                 <TextView

@@ -41,6 +41,7 @@ public class RegistrasiTeknisi extends AppCompatActivity {
         Auth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("teknisi");
 
+
         autoCompleteRole = findViewById(R.id.autoCompleteRole);
         String[] roles = {"Teknisi", "Admin"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.item_dropdown_role, roles);
@@ -86,16 +87,19 @@ public class RegistrasiTeknisi extends AppCompatActivity {
 
         //validasi inputan
         if (namaTeknisi.isEmpty() || noRegist.isEmpty() || email.isEmpty() || password.isEmpty()){
-            if (namaTeknisi.isEmpty()) inputNamaTeknisi.setError("Nama Tidak Boleh Kosong");
-            if (noRegist.isEmpty()) inputNoRegistKaryawan.setError("Harap Isi Nomor Karyawan");
-            if (email.isEmpty()) inputEmail.setError("Email Tidak Boleh Kosong");
-            if (password.length()< 6)inputPassword.setError("Password Minimal 6 Karakter");
-            if (role.isEmpty()) autoCompleteRole.setError("Pilih Role Terlebih Dahulu");
+            Toast.makeText(this, "Harap lengkapi semua data terlebih dahulu", Toast.LENGTH_LONG).show();
+            return;
         }
         if (selectedRole.equals("Admin") && !kodeAkses.equals("superadmin")) {
             inputKodeAkses.setError("Kode akses salah");
             return;
         }
+        // Validasi tambahan untuk password
+        if (inputPassword.getText().toString().length() < 6) {
+            Toast.makeText(this, "Password minimal 6 karakter", Toast.LENGTH_LONG).show();
+            return;
+        }
+
 
         //simpan data di Realtime Database
         Auth.createUserWithEmailAndPassword(email, password)

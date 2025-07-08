@@ -79,7 +79,7 @@ public class login extends AppCompatActivity {
                                                     String noRegister = data.child("noRegister").getValue(String.class);
 
                                                     Intent intent;
-                                                    if (role != null && role.equals("Admin")){
+                                                    if (role != null && (role.equals("Admin") || role.equals("Owner"))){
                                                         intent = new Intent(login.this, MainActivityAdmin.class);
                                                     }else {
                                                         intent = new Intent(login.this, MainActivity.class);

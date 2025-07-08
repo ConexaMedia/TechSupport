@@ -57,7 +57,8 @@
                             android:id="@+id/autoCompleteRole"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:inputType="none"
+                            android:inputType="text"
+                            android:completionThreshold="1"
                             android:textColor="@color/bluedark"
                             android:backgroundTint="@color/bluedark"
                             android:textColorHint="@color/bluedark" />

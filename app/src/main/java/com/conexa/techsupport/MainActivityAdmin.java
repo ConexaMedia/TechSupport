@@ -19,12 +19,14 @@ public class MainActivityAdmin extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private FirebaseAuth fAuth;
 
+
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main_admin);
 
         fAuth = FirebaseAuth.getInstance();
+
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_panel_admin,new panelHomeAdmin()).commit();
